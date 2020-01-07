@@ -208,7 +208,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return int
 	 */
-	public function getByte(string $name, ?int $default = null, bool $badTagDefault = false) : int{
+	public function getByte(string $name, int $default = null, bool $badTagDefault = false) : int{
 		return $this->getTagValue($name, ByteTag::class, $default, $badTagDefault);
 	}
 
@@ -219,7 +219,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return int
 	 */
-	public function getShort(string $name, ?int $default = null, bool $badTagDefault = false) : int{
+	public function getShort(string $name, int $default = null, bool $badTagDefault = false) : int{
 		return $this->getTagValue($name, ShortTag::class, $default, $badTagDefault);
 	}
 
@@ -230,7 +230,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return int
 	 */
-	public function getInt(string $name, ?int $default = null, bool $badTagDefault = false) : int{
+	public function getInt(string $name, int $default = null, bool $badTagDefault = false) : int{
 		return $this->getTagValue($name, IntTag::class, $default, $badTagDefault);
 	}
 
@@ -241,7 +241,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return int
 	 */
-	public function getLong(string $name, ?int $default = null, bool $badTagDefault = false) : int{
+	public function getLong(string $name, int $default = null, bool $badTagDefault = false) : int{
 		return $this->getTagValue($name, LongTag::class, $default, $badTagDefault);
 	}
 
@@ -252,7 +252,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return float
 	 */
-	public function getFloat(string $name, ?float $default = null, bool $badTagDefault = false) : float{
+	public function getFloat(string $name, float $default = null, bool $badTagDefault = false) : float{
 		return $this->getTagValue($name, FloatTag::class, $default, $badTagDefault);
 	}
 
@@ -263,7 +263,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return float
 	 */
-	public function getDouble(string $name, ?float $default = null, bool $badTagDefault = false) : float{
+	public function getDouble(string $name, float $default = null, bool $badTagDefault = false) : float{
 		return $this->getTagValue($name, DoubleTag::class, $default, $badTagDefault);
 	}
 
@@ -274,7 +274,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return string
 	 */
-	public function getByteArray(string $name, ?string $default = null, bool $badTagDefault = false) : string{
+	public function getByteArray(string $name, string $default = null, bool $badTagDefault = false) : string{
 		return $this->getTagValue($name, ByteArrayTag::class, $default, $badTagDefault);
 	}
 
@@ -285,7 +285,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return string
 	 */
-	public function getString(string $name, ?string $default = null, bool $badTagDefault = false) : string{
+	public function getString(string $name, string $default = null, bool $badTagDefault = false) : string{
 		return $this->getTagValue($name, StringTag::class, $default, $badTagDefault);
 	}
 
@@ -296,7 +296,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @return int[]
 	 */
-	public function getIntArray(string $name, ?array $default = null, bool $badTagDefault = false) : array{
+	public function getIntArray(string $name, array $default = null, bool $badTagDefault = false) : array{
 		return $this->getTagValue($name, IntArrayTag::class, $default, $badTagDefault);
 	}
 
@@ -537,7 +537,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 		return current($this->value) ?: null;
 	}
 
-	public function rewind() : void{
+	public function rewind(){
 		reset($this->value);
 	}
 
