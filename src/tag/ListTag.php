@@ -57,7 +57,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	/**
 	 * @return Tag[]
 	 */
-	public function getValue() : array{
+	public function getValue(){
 		$value = [];
 		foreach($this->value as $k => $v){
 			$value[$k] = $v;

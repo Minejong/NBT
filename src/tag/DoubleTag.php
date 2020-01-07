@@ -59,7 +59,7 @@ final class DoubleTag extends ImmutableTag{
 	/**
 	 * @return float
 	 */
-	public function getValue() : float{
+	public function getValue(){
 		return $this->value;
 	}
 

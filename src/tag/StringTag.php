@@ -63,7 +63,7 @@ final class StringTag extends ImmutableTag{
 	/**
 	 * @return string
 	 */
-	public function getValue() : string{
+	public function getValue(){
 		return $this->value;
 	}
 

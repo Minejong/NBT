@@ -53,7 +53,7 @@ trait IntegerishTagTrait{
 	/**
 	 * @return int
 	 */
-	public function getValue() : int{
+	public function getValue(){
 		return $this->value;
 	}
 

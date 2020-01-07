@@ -76,7 +76,7 @@ final class IntArrayTag extends ImmutableTag{
 	/**
 	 * @return int[]
 	 */
-	public function getValue() : array{
+	public function getValue(){
 		return $this->value;
 	}
 }
