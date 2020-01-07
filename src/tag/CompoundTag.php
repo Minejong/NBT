@@ -94,7 +94,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 * @return Tag|null
 	 * @throws \RuntimeException if the tag exists and is not of the expected type (if specified)
 	 */
-	public function getTag(string $name, string $expectedClass = Tag::class) : ?Tag{
+	public function getTag(string $name, string $expectedClass = Tag::class){
 		assert(is_a($expectedClass, Tag::class, true));
 		$tag = $this->value[$name] ?? null;
 		if($tag !== null and !($tag instanceof $expectedClass)){
@@ -111,7 +111,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 * @param string $name
 	 * @return ListTag|null
 	 */
-	public function getListTag(string $name) : ?ListTag{
+	public function getListTag(string $name){
 		return $this->getTag($name, ListTag::class);
 	}
 
@@ -122,7 +122,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 * @param string $name
 	 * @return CompoundTag|null
 	 */
-	public function getCompoundTag(string $name) : ?CompoundTag{
+	public function getCompoundTag(string $name){
 		return $this->getTag($name, CompoundTag::class);
 	}
 
@@ -153,7 +153,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	 *
 	 * @param string ...$names
 	 */
-	public function removeTag(string ...$names) : void{
+	public function removeTag(string ...$names){
 		foreach($names as $name){
 			unset($this->value[$name]);
 		}
@@ -477,7 +477,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 		return $result;
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		foreach($this->value as $name => $tag){
 			$writer->writeByte($tag->getType());
 			$writer->writeString($name);
@@ -504,7 +504,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 		return clone $this;
 	}
 
-	public function next() : void{
+	public function next(){
 		next($this->value);
 	}
 
@@ -518,7 +518,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	/**
 	 * @return string|null
 	 */
-	public function key() : ?string{
+	public function key(){
 		$k = key($this->value);
 		if(is_int($k)){
 			/* PHP arrays are idiotic and cast keys like "1" to int(1)
@@ -533,7 +533,7 @@ final class CompoundTag extends Tag implements \ArrayAccess, \Iterator, \Countab
 	/**
 	 * @return Tag|null
 	 */
-	public function current() : ?Tag{
+	public function current(){
 		return current($this->value) ?: null;
 	}
 

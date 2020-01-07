@@ -52,7 +52,7 @@ final class FloatTag extends ImmutableTag{
 		return new self($reader->readFloat());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeFloat($this->value);
 	}
 

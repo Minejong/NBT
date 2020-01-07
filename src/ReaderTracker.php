@@ -39,7 +39,7 @@ class ReaderTracker{
 	 *
 	 * @throws \UnexpectedValueException if the recursion depth is too deep
 	 */
-	public function protectDepth(\Closure $execute) : void{
+	public function protectDepth(\Closure $execute){
 		if($this->maxDepth > 0 and ++$this->currentDepth > $this->maxDepth){
 			throw new \UnexpectedValueException("Nesting level too deep: reached max depth of $this->maxDepth tags");
 		}

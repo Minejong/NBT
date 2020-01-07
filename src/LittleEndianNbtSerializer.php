@@ -38,7 +38,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return $this->buffer->getSignedLShort();
 	}
 
-	public function writeShort(int $v) : void{
+	public function writeShort(int $v){
 		$this->buffer->putLShort($v);
 	}
 
@@ -46,7 +46,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return $this->buffer->getLInt();
 	}
 
-	public function writeInt(int $v) : void{
+	public function writeInt(int $v){
 		$this->buffer->putLInt($v);
 	}
 
@@ -54,7 +54,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return $this->buffer->getLLong();
 	}
 
-	public function writeLong(int $v) : void{
+	public function writeLong(int $v){
 		$this->buffer->putLLong($v);
 	}
 
@@ -62,7 +62,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return $this->buffer->getLFloat();
 	}
 
-	public function writeFloat(float $v) : void{
+	public function writeFloat(float $v){
 		$this->buffer->putLFloat($v);
 	}
 
@@ -70,7 +70,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return $this->buffer->getLDouble();
 	}
 
-	public function writeDouble(float $v) : void{
+	public function writeDouble(float $v){
 		$this->buffer->putLDouble($v);
 	}
 
@@ -79,7 +79,7 @@ class LittleEndianNbtSerializer extends BaseNbtSerializer{
 		return array_values(unpack("V*", $this->buffer->get($len * 4)));
 	}
 
-	public function writeIntArray(array $array) : void{
+	public function writeIntArray(array $array){
 		$this->writeInt(count($array));
 		$this->buffer->put(pack("V*", ...$array));
 	}

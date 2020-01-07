@@ -28,29 +28,29 @@ namespace pocketmine\nbt;
  */
 interface NbtStreamWriter{
 
-	public function writeByte(int $v) : void;
+	public function writeByte(int $v);
 
-	public function writeShort(int $v) : void;
+	public function writeShort(int $v);
 
-	public function writeInt(int $v) : void;
+	public function writeInt(int $v);
 
-	public function writeLong(int $v) : void;
+	public function writeLong(int $v);
 
-	public function writeFloat(float $v) : void;
+	public function writeFloat(float $v);
 
-	public function writeDouble(float $v) : void;
+	public function writeDouble(float $v);
 
-	public function writeByteArray(string $v) : void;
+	public function writeByteArray(string $v);
 
 	/**
 	 * @param string $v
 	 *
 	 * @throws \InvalidArgumentException if the string is too long
 	 */
-	public function writeString(string $v) : void;
+	public function writeString(string $v);
 
 	/**
 	 * @param int[] $array
 	 */
-	public function writeIntArray(array $array) : void;
+	public function writeIntArray(array $array);
 }

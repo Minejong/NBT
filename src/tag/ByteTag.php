@@ -46,7 +46,7 @@ final class ByteTag extends ImmutableTag{
 		return new self($reader->readSignedByte());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeByte($this->value);
 	}
 }

@@ -53,7 +53,7 @@ final class ByteArrayTag extends ImmutableTag{
 		return new self($reader->readByteArray());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeByteArray($this->value);
 	}
 

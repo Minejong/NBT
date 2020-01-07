@@ -48,7 +48,7 @@ final class IntTag extends ImmutableTag{
 		return new self($reader->readInt());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeInt($this->value);
 	}
 }

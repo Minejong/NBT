@@ -38,7 +38,7 @@ abstract class Tag{
 
 	abstract public function getType() : int;
 
-	abstract public function write(NbtStreamWriter $writer) : void;
+	abstract public function write(NbtStreamWriter $writer);
 
 	public function __toString(){
 		return $this->toString();

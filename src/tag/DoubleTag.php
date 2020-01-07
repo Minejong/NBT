@@ -52,7 +52,7 @@ final class DoubleTag extends ImmutableTag{
 		return new self($reader->readDouble());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeDouble($this->value);
 	}
 

@@ -65,7 +65,7 @@ final class IntArrayTag extends ImmutableTag{
 		return new self($reader->readIntArray());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeIntArray($this->value);
 	}
 

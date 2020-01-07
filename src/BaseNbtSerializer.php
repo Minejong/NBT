@@ -184,7 +184,7 @@ abstract class BaseNbtSerializer implements NbtStreamReader, NbtStreamWriter{
 		return Binary::signByte($this->buffer->getByte());
 	}
 
-	public function writeByte(int $v) : void{
+	public function writeByte(int $v){
 		$this->buffer->putByte($v);
 	}
 
@@ -192,7 +192,7 @@ abstract class BaseNbtSerializer implements NbtStreamReader, NbtStreamWriter{
 		return $this->buffer->get($this->readInt());
 	}
 
-	public function writeByteArray(string $v) : void{
+	public function writeByteArray(string $v){
 		$this->writeInt(strlen($v)); //TODO: overflow
 		$this->buffer->put($v);
 	}
@@ -229,7 +229,7 @@ abstract class BaseNbtSerializer implements NbtStreamReader, NbtStreamWriter{
 	 * @param string $v
 	 * @throws \InvalidArgumentException if the string is too long
 	 */
-	public function writeString(string $v) : void{
+	public function writeString(string $v){
 		$this->writeShort(self::checkWriteStringLength(strlen($v)));
 		$this->buffer->put($v);
 	}

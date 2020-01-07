@@ -46,7 +46,7 @@ final class ShortTag extends ImmutableTag{
 		return new self($reader->readSignedShort());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeShort($this->value);
 	}
 }

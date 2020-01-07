@@ -27,7 +27,7 @@ use function get_class;
 
 trait NoDynamicFieldsTrait{
 
-	private function throw(string $field) : void{
+	private function throw(string $field){
 		throw new \RuntimeException("Cannot access dynamic field \"$field\": Dynamic field access on " . get_class($this) . " is no longer supported");
 	}
 

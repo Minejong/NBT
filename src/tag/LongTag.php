@@ -48,7 +48,7 @@ final class LongTag extends ImmutableTag{
 		return new self($reader->readLong());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeLong($this->value);
 	}
 }

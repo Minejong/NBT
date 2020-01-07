@@ -119,7 +119,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 * @throws \TypeError if an incompatible tag type is given
 	 * @throws \TypeError if $value is not a Tag object
 	 */
-	public function offsetSet($offset, $value) : void{
+	public function offsetSet($offset, $value){
 		if($value instanceof Tag){
 			$this->checkTagType($value);
 			$this->value[$offset] = $value;
@@ -131,7 +131,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	/**
 	 * @param int $offset
 	 */
-	public function offsetUnset($offset) : void{
+	public function offsetUnset($offset){
 		unset($this->value[$offset]);
 	}
 
@@ -154,7 +154,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 *
 	 * @param Tag $tag
 	 */
-	public function push(Tag $tag) : void{
+	public function push(Tag $tag){
 		$this->checkTagType($tag);
 		$this->value->push($tag);
 	}
@@ -173,7 +173,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 *
 	 * @param Tag $tag
 	 */
-	public function unshift(Tag $tag) : void{
+	public function unshift(Tag $tag){
 		$this->checkTagType($tag);
 		$this->value->unshift($tag);
 	}
@@ -206,7 +206,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 *
 	 * @param int $offset
 	 */
-	public function remove(int $offset) : void{
+	public function remove(int $offset){
 		unset($this->value[$offset]);
 	}
 
@@ -248,7 +248,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 *
 	 * @throws \OutOfRangeException if the offset is not within the bounds of the list
 	 */
-	public function set(int $offset, Tag $tag) : void{
+	public function set(int $offset, Tag $tag){
 		$this->checkTagType($tag);
 		$this->value[$offset] = $tag;
 	}
@@ -311,7 +311,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	 *
 	 * @throws \TypeError if the tag type is not compatible.
 	 */
-	private function checkTagType(Tag $tag) : void{
+	private function checkTagType(Tag $tag){
 		$type = $tag->getType();
 		if($type !== $this->tagType){
 			if($this->tagType === NBT::TAG_End){
@@ -344,7 +344,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 		return new self($value, $tagType);
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeByte($this->tagType);
 		$writer->writeInt($this->value->count());
 		/** @var Tag $tag */
@@ -376,7 +376,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 		return clone $this;
 	}
 
-	public function next() : void{
+	public function next(){
 		$this->value->next();
 	}
 
@@ -390,7 +390,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 	/**
 	 * @return Tag|null
 	 */
-	public function current() : ?Tag{
+	public function current(){
 		return $this->value->current();
 	}
 
@@ -401,7 +401,7 @@ final class ListTag extends Tag implements \ArrayAccess, \Countable, \Iterator{
 		return (int) $this->value->key();
 	}
 
-	public function rewind() : void{
+	public function rewind(){
 		$this->value->rewind();
 	}
 

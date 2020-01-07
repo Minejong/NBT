@@ -56,7 +56,7 @@ final class StringTag extends ImmutableTag{
 		return new self($reader->readString());
 	}
 
-	public function write(NbtStreamWriter $writer) : void{
+	public function write(NbtStreamWriter $writer){
 		$writer->writeString($this->value);
 	}
 

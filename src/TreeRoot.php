@@ -74,7 +74,7 @@ class TreeRoot{
 		return $this->name === $that->name and $this->root->equals($that->root);
 	}
 
-	public function __toString(){
+	public function __toString() : string{
 		return "ROOT {\n  " . ($this->name !== "" ? "\"$this->name\" => " : "") . $this->root->toString(1) . "\n}";
 	}
 }
