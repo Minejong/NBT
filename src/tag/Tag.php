@@ -90,7 +90,7 @@ abstract class Tag{
 		return $that instanceof $this and $this->getValue() === $that->getValue();
 	}
 
-	protected static function restrictArgCount(string $func, int $haveArgs, int $wantMaxArgs) : void{
+	protected static function restrictArgCount(string $func, int $haveArgs, int $wantMaxArgs){
 		if($haveArgs > $wantMaxArgs){
 			throw new \ArgumentCountError("$func() expects at most $wantMaxArgs parameters, $haveArgs given");
 		}
